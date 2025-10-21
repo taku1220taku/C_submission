@@ -1,5 +1,4 @@
-#include <stdlib.h>
-void	ft_bzero(void *s, unsigned int n);
+#include "libft.h"
 
 void	*calloc(size_t count, size_t size)
 {

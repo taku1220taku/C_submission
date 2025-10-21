@@ -1,4 +1,4 @@
-unsigned int ft_strlen(char *s);
+#include "libft.h"
 
 unsigned int	ft_strlcat(char *dst, char *src, unsigned int dstsize)
 {
@@ -8,7 +8,7 @@ unsigned int	ft_strlcat(char *dst, char *src, unsigned int dstsize)
 
 	dest_len = ft_strlen(dst);
 	src_len = ft_strlen(src);
-	if(dstsize == 0)
+	if (dstsize == 0)
 		return (src_len);
 	else if (dest_len < dstsize)
 	{

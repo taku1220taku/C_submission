@@ -1,6 +1,4 @@
-#include <stdlib.h>
-
-size_t	ft_strlen(char *s);
+#include "libft.h"
 
 int	check_match(const char *start, const char *word, size_t word_len)
 {

@@ -1,11 +1,12 @@
-int ft_isalnum(int c)
-{
-    unsigned char uc;
+#include "libft.h"
 
-    uc = (unsigned char)c;
-    if(('a' <= uc && uc <= 'z') || ('A' <= uc && uc <= 'Z'))
-        return (1);
-    else if ('0' <= uc && uc <= '9')
-        return (1);
-    return (0);
+int	is_alnum(int c)
+{
+	unsigned char	uc;
+
+	uc = (unsigned char)c;
+	if (ft_isalpha(c) || ft_isdigit(c))
+		return (1);
+	return (0);
+
 }

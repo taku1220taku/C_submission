@@ -1,4 +1,4 @@
-unsigned int ft_strlen(char *s);
+#include "libft.h"
 
 unsigned int	strlcpy(char *dst, const char *src, unsigned int dstsize)
 {

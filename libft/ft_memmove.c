@@ -1,4 +1,3 @@
-
 void	*memmove(void *dst, const void *src, unsigned int len)
 {
 	char			*s_dst;

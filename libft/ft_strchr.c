@@ -1,4 +1,4 @@
-unsigned int ft_strlen(char *s);
+#include "libft.h"
 
 char	*strchr(const char *s, int c)
 {
