@@ -6,7 +6,7 @@
 /*   By: tkono <tkono@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/25 16:10:49 by tkono             #+#    #+#             */
-/*   Updated: 2025/10/25 16:18:29 by tkono            ###   ########.fr       */
+/*   Updated: 2025/10/25 19:47:23 by tkono            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 void	ft_putnbr_fd(int n, int fd)
 {
 	long int	nb;
-	char		c;
 
 	nb = n;
 	if (n < 0)
@@ -27,7 +26,7 @@ void	ft_putnbr_fd(int n, int fd)
 		ft_putchar_fd('0' + nb, fd);
 	else
 	{
-		ft_putnbr_fd(n / 10, fd);
-		ft_putnbr_fd(n % 10, fd);
+		ft_putnbr_fd(nb / 10, fd);
+		ft_putnbr_fd(nb % 10, fd);
 	}
 }

@@ -6,13 +6,12 @@
 /*   By: tkono <tkono@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 18:17:11 by tkono             #+#    #+#             */
-/*   Updated: 2025/10/22 18:17:20 by tkono            ###   ########.fr       */
+/*   Updated: 2025/10/25 20:52:03 by tkono            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_toupper(int c)
 {
-	char	diff;
 	char	c_c;
 
 	c_c = (char)c;

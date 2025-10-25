@@ -6,7 +6,7 @@
 /*   By: tkono <tkono@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 16:06:11 by tkono             #+#    #+#             */
-/*   Updated: 2025/10/25 15:24:16 by tkono            ###   ########.fr       */
+/*   Updated: 2025/10/25 20:09:14 by tkono            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	unsigned int	len;
-	unsigned int	i;
+	size_t	len;
+	size_t	i;
 
 	if (!s)
 		return (NULL);
@@ -24,7 +24,7 @@ char	*ft_strchr(const char *s, int c)
 	while (i < len)
 	{
 		if (s[i] == (char)c)
-			return (&s[i]);
+			return ((char *)(s + i));
 		++i;
 	}
 	return (NULL);

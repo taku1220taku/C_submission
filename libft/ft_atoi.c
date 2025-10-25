@@ -6,7 +6,7 @@
 /*   By: tkono <tkono@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 15:01:53 by tkono             #+#    #+#             */
-/*   Updated: 2025/10/25 15:25:03 by tkono            ###   ########.fr       */
+/*   Updated: 2025/10/25 18:24:21 by tkono            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,3 +39,13 @@ int	ft_atoi(const char *s)
 		sum = sum * 10 + (s[i++] - '0');
 	return (sum * sign);
 }
+
+// #include <stdio.h>
+// #include <stdlib.h>
+// int main()
+// {
+// 	const char *s = "   \n\v --2147483648";
+// 	s = NULL;
+// 	printf("%d\n", ft_atoi(s));
+// 	printf("%d", atoi(s));
+// }

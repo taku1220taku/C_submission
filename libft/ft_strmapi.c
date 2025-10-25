@@ -6,7 +6,7 @@
 /*   By: tkono <tkono@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/25 15:50:30 by tkono             #+#    #+#             */
-/*   Updated: 2025/10/25 15:56:05 by tkono            ###   ########.fr       */
+/*   Updated: 2025/10/25 21:20:28 by tkono            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	i = 0;
 	while (s[i])
 	{
-		str[i] = f(i, s[i]);
+		str[i] = f(i, (char)s[i]);
 		++i;
 	}
 	return (str);

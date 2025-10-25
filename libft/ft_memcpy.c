@@ -6,17 +6,17 @@
 /*   By: tkono <tkono@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 15:49:31 by tkono             #+#    #+#             */
-/*   Updated: 2025/10/25 17:30:37 by tkono            ###   ########.fr       */
+/*   Updated: 2025/10/25 18:37:43 by tkono            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, unsigned int n)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
 	char			*s_dst;
 	char			*s_src;
-	unsigned int	i;
+	size_t			i;
 
 	if (dst == NULL || src == NULL)
 		return (NULL);
@@ -30,3 +30,13 @@ void	*ft_memcpy(void *dst, const void *src, unsigned int n)
 	}
 	return (dst);
 }
+
+// #include <stdio.h>
+// int main()
+// {
+// 	char *dst = (char *)malloc(10);
+// 	char *src = "hello wwwwww";
+// 	ft_memcpy(dst,src,7);
+// 	dst[7] = 0;
+// 	printf("%s",dst);
+// }

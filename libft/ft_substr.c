@@ -6,7 +6,7 @@
 /*   By: tkono <tkono@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/25 14:54:01 by tkono             #+#    #+#             */
-/*   Updated: 2025/10/25 15:22:33 by tkono            ###   ########.fr       */
+/*   Updated: 2025/10/25 21:43:40 by tkono            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	unsigned int	i;
+	size_t	i;
 	char			*s_copy;
 
 	if (!s)

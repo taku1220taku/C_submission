@@ -6,20 +6,20 @@
 /*   By: tkono <tkono@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 18:12:54 by tkono             #+#    #+#             */
-/*   Updated: 2025/10/22 18:12:55 by tkono            ###   ########.fr       */
+/*   Updated: 2025/10/25 21:18:54 by tkono            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-unsigned int	ft_strlcat(char *dst, char *src, unsigned int dstsize)
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	unsigned int	dest_len;
-	unsigned int	src_len;
-	unsigned int	i;
+	size_t	dest_len;
+	size_t	src_len;
+	size_t	i;
 
 	if (!dst || !src)
-		return (NULL);
+		return (0);
 	dest_len = ft_strlen(dst);
 	src_len = ft_strlen(src);
 	if (dstsize == 0)
@@ -39,3 +39,12 @@ unsigned int	ft_strlcat(char *dst, char *src, unsigned int dstsize)
 	else
 		return (src_len + dstsize);
 }
+
+// #include <stdio.h>
+// int main()
+// {
+// 	char dst[100] = "hello";
+// 	char src[100] = "takeshi";
+// 	printf("%ld\n", ft_strlcat(dst, src, 9));
+// 	printf("%s", dst);
+// }

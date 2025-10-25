@@ -6,16 +6,13 @@
 /*   By: tkono <tkono@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 15:08:16 by tkono             #+#    #+#             */
-/*   Updated: 2025/10/22 15:08:19 by tkono            ###   ########.fr       */
+/*   Updated: 2025/10/25 19:46:04 by tkono            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isascii(int c)
 {
-	unsigned char	uc;
-
-	uc = (unsigned char)c;
-	if (0 <= uc && uc <= 127)
+	if (0 <= c && c <= 127)
 		return (1);
 	return (0);
 }

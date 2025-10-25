@@ -6,17 +6,18 @@
 /*   By: tkono <tkono@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 15:54:43 by tkono             #+#    #+#             */
-/*   Updated: 2025/10/25 15:24:42 by tkono            ###   ########.fr       */
+/*   Updated: 2025/10/25 19:11:23 by tkono            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
-void	*ft_memmove(void *dst, const void *src, unsigned int len)
+void	*ft_memmove(void *dst, const void *src, size_t n)
 {
 	char			*s_dst;
 	char			*s_src;
-	unsigned int	i;
+	size_t			i;
 
 	if (dst == NULL || src == NULL)
 		return (NULL);
@@ -25,14 +26,26 @@ void	*ft_memmove(void *dst, const void *src, unsigned int len)
 	if (s_dst <= s_src)
 	{
 		i = 0;
-		while (i < len)
-			s_dst[i++] = s_src[i++];
+		while (i < n)
+		{
+			s_dst[i] = s_src[i];
+			++i;
+		}
 	}
 	else
 	{
-		i = len - 1;
-		while (i > -1)
-			s_dst[i--] = s_src[i--];
+		i = n;
+		while (--i > 0)
+			s_dst[i] = s_src[i];
+		s_dst[0] = s_src[0];
 	}
 	return (dst);
 }
+
+// #include <stdio.h>
+// int main()
+// {
+// 	char src[20] = "hello wLwwww";
+// 	ft_memmove((src + 6),src,3);
+// 	printf("%s",src);
+// }

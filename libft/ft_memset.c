@@ -6,7 +6,7 @@
 /*   By: tkono <tkono@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 16:03:51 by tkono             #+#    #+#             */
-/*   Updated: 2025/10/22 16:05:52 by tkono            ###   ########.fr       */
+/*   Updated: 2025/10/25 19:12:14 by tkono            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	*ft_memset(void *b, int c, size_t len)
 {
 	unsigned char	*p;
 	unsigned char	character;
-	unsigned int	i;
+	size_t			i;
 
 	if (b == NULL)
 		return (NULL);

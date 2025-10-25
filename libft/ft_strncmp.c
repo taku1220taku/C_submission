@@ -6,18 +6,18 @@
 /*   By: tkono <tkono@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 18:14:50 by tkono             #+#    #+#             */
-/*   Updated: 2025/10/25 15:23:49 by tkono            ###   ########.fr       */
+/*   Updated: 2025/10/25 21:52:21 by tkono            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strcmp(const char *s1, const char *s2, unsigned int n)
+int	ft_strncmp(const char *s1, const char *s2, unsigned int n)
 {
 	unsigned int	i;
 
 	if (!s1 || !s2)
-		return (NULL);
+		return (-1);
 	i = 0;
 	while (s1[i] != '\0' && i < n)
 	{
