@@ -6,13 +6,13 @@
 /*   By: tkono <tkono@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 16:10:39 by tkono             #+#    #+#             */
-/*   Updated: 2025/10/22 16:17:34 by tkono            ###   ########.fr       */
+/*   Updated: 2025/10/25 15:23:36 by tkono            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*strdup(const char *s1)
+char	*ft_strdup(const char *s1)
 {
 	char	*s2;
 	size_t	len;

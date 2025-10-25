@@ -6,13 +6,13 @@
 /*   By: tkono <tkono@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 18:15:16 by tkono             #+#    #+#             */
-/*   Updated: 2025/10/22 18:15:17 by tkono            ###   ########.fr       */
+/*   Updated: 2025/10/25 15:23:17 by tkono            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	check_match(const char *start, const char *word, size_t word_len)
+static int	check_match(const char *start, const char *word, size_t word_len)
 {
 	size_t	i;
 

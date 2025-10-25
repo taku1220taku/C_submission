@@ -6,11 +6,13 @@
 /*   By: tkono <tkono@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 18:14:50 by tkono             #+#    #+#             */
-/*   Updated: 2025/10/22 18:15:11 by tkono            ###   ########.fr       */
+/*   Updated: 2025/10/25 15:23:49 by tkono            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	strcmp(const char *s1, const char *s2, unsigned int n)
+#include "libft.h"
+
+int	ft_strcmp(const char *s1, const char *s2, unsigned int n)
 {
 	unsigned int	i;
 

@@ -6,11 +6,11 @@
 /*   By: tkono <tkono@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 15:01:53 by tkono             #+#    #+#             */
-/*   Updated: 2025/10/22 15:01:54 by tkono            ###   ########.fr       */
+/*   Updated: 2025/10/25 15:25:03 by tkono            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isspace(char c)
+static int	ft_isspace(char c)
 {
 	if (c == ' ' || c == '\t' || c == '\n'
 		|| c == '\v' || c == '\f' || c == '\r')

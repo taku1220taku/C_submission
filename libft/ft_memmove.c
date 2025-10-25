@@ -6,9 +6,11 @@
 /*   By: tkono <tkono@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 15:54:43 by tkono             #+#    #+#             */
-/*   Updated: 2025/10/22 16:03:30 by tkono            ###   ########.fr       */
+/*   Updated: 2025/10/25 15:24:42 by tkono            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	*ft_memmove(void *dst, const void *src, unsigned int len)
 {

@@ -6,13 +6,13 @@
 /*   By: tkono <tkono@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 15:02:12 by tkono             #+#    #+#             */
-/*   Updated: 2025/10/22 15:02:13 by tkono            ###   ########.fr       */
+/*   Updated: 2025/10/25 15:25:12 by tkono            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	is_alnum(int c)
+int	ft_is_alnum(int c)
 {
 	if (ft_isalpha(c) || ft_isdigit(c))
 		return (1);

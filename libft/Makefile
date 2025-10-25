@@ -1,14 +1,14 @@
 NAME = libft.a
 
-SRCS = *.c
+SRCS = .c
 OBJS = ${SRCS:.c=.o}
 
 CC = cc
 
 CFLAGS = -Wall -Wextra -Werror
 
-srcs/%.o: srcs/%.c
-	${CC} ${CFLAGS} -I includes -c $< -o $@
+%.o: %.c
+	${CC} ${CFLAGS} -I libft.h -c $< -o $@
 
 $(NAME): ${OBJS}
 	ar rcs $@ $^

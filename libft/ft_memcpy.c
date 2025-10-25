@@ -6,9 +6,11 @@
 /*   By: tkono <tkono@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 15:49:31 by tkono             #+#    #+#             */
-/*   Updated: 2025/10/22 15:53:59 by tkono            ###   ########.fr       */
+/*   Updated: 2025/10/25 15:24:31 by tkono            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	*ft_memcpy(void *dst, const void *src, unsigned int n)
 {
