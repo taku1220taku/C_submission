@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tkono <tkono@student.42tokyo.jp>           +#+  +:+       +#+        */
+/*   By: mosakura <mosakura@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 16:10:39 by tkono             #+#    #+#             */
-/*   Updated: 2025/10/25 21:02:40 by tkono            ###   ########.fr       */
+/*   Updated: 2025/10/25 23:02:15 by mosakura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 char	*ft_strdup(const char *s1)
 {
 	char	*s2;
-	size_t	len;
+	size_t	len ;
 
 	if (!s1)
 		return (NULL);

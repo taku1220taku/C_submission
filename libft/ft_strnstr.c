@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tkono <tkono@student.42tokyo.jp>           +#+  +:+       +#+        */
+/*   By: mosakura <mosakura@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 18:15:16 by tkono             #+#    #+#             */
-/*   Updated: 2025/10/25 20:13:45 by tkono            ###   ########.fr       */
+/*   Updated: 2025/10/25 22:48:31 by mosakura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,10 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 		return ((char *)haystack);
 	else
 	{
+		if (len < needle_len)
+			return (NULL);
 		i = 0;
-		while (i < (len - needle_len + 1))
+		while (i < (len - needle_len + 1) && haystack[i])
 		{
 			if (check_match(&haystack[i], needle, needle_len))
 				return ((char *)(haystack + i));

@@ -6,7 +6,7 @@
 /*   By: tkono <tkono@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/25 15:26:27 by tkono             #+#    #+#             */
-/*   Updated: 2025/10/25 18:23:35 by tkono            ###   ########.fr       */
+/*   Updated: 2025/10/26 14:41:45 by tkono            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,20 +37,46 @@ void	ft_strreverse(char *s)
 	}
 }
 
+static size_t	count_digit(int n)
+{
+	size_t	i;
+
+	i = 0;
+	while (n != 0)
+	{
+		n /= 10;
+		++i;
+	}
+	return (i);
+}
+
+static char	*make_str(int is_negative, int n, size_t *nlen)
+{
+	char	*str;
+
+	*nlen = count_digit(n);
+	str = (char *)malloc(*nlen + is_negative + 1);
+	if (!str)
+		return (NULL);
+	return (str);
+}
+
 char	*ft_itoa(int n)
 {
 	size_t	length;
+	size_t	nlen;
 	char	*str;
 	int		is_negative;
 
+	if (n == 0)
+		return (ft_strdup("0"));
 	is_negative = 0;
 	if (n < 0)
 		is_negative = 1;
-	str = (char *)malloc(11 + is_negative);
+	str = make_str(is_negative, n, &nlen);
 	if (!str)
 		return (NULL);
-	if (n == 0)
-		str[0] = '0';
+	str[nlen + is_negative] = '\0';
 	length = 0;
 	while (n != 0)
 	{
@@ -60,7 +86,6 @@ char	*ft_itoa(int n)
 	if (is_negative)
 		str[length] = '-';
 	++length;
-	str[length] = '\0';
 	ft_strreverse(str);
 	return (str);
 }
