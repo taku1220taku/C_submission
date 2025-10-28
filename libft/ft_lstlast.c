@@ -1,35 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tkono <tkono@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/22 16:10:39 by tkono             #+#    #+#             */
-/*   Updated: 2025/10/28 10:01:43 by tkono            ###   ########.fr       */
+/*   Created: 2025/10/27 12:21:29 by tkono             #+#    #+#             */
+/*   Updated: 2025/10/27 16:36:22 by tkono            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s1)
+t_list	*ft_lstlast(t_list *lst)
 {
-	char	*s2;
-	size_t	len ;
-
-	if (!s1)
-		return (NULL);
-	len = ft_strlen(s1);
-	s2 = (char *)malloc(sizeof(char) * (len + 1));
-	if (!s2)
-		return (NULL);
-	ft_strlcpy(s2, s1, len + 1);
-	return (s2);
+	if (lst)
+	{
+		while (lst->next)
+		{
+			lst = lst ->next;
+		}
+	}
+	return (lst);
 }
-
-// #include <stdio.h>
-// int main()
-// {
-// 	char *s = "hello wor";
-// 	printf("%s", ft_strdup(s));
-// }
