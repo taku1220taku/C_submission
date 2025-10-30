@@ -6,7 +6,7 @@
 /*   By: tkono <tkono@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 12:27:46 by tkono             #+#    #+#             */
-/*   Updated: 2025/10/27 12:31:24 by tkono            ###   ########.fr       */
+/*   Updated: 2025/10/28 18:02:37 by tkono            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ void	ft_lstdelone(t_list *lst, void (*del)(void*))
 {
 	if (!del || !lst)
 		return ;
-
 	del(lst->content);
 	free(lst);
 }

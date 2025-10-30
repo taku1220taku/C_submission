@@ -6,7 +6,7 @@
 /*   By: tkono <tkono@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 18:15:16 by tkono             #+#    #+#             */
-/*   Updated: 2025/10/26 14:45:24 by tkono            ###   ########.fr       */
+/*   Updated: 2025/10/28 18:02:10 by tkono            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	if (needle == NULL || haystack == NULL)
 		return (NULL);
 	needle_len = ft_strlen(needle);
-
 	if (needle_len == 0)
 		return ((char *)haystack);
 	else

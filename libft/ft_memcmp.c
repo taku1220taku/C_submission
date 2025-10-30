@@ -6,7 +6,7 @@
 /*   By: tkono <tkono@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 15:14:19 by tkono             #+#    #+#             */
-/*   Updated: 2025/10/25 20:57:04 by tkono            ###   ########.fr       */
+/*   Updated: 2025/10/28 18:02:19 by tkono            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 
 	if (s1 == NULL || s2 == NULL)
 		return (-1);
-
 	i = 0;
 	us1 = (unsigned char *)s1;
 	us2 = (unsigned char *)s2;

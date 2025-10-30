@@ -6,7 +6,7 @@
 /*   By: tkono <tkono@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 12:23:59 by tkono             #+#    #+#             */
-/*   Updated: 2025/10/27 17:23:09 by tkono            ###   ########.fr       */
+/*   Updated: 2025/10/28 18:00:11 by tkono            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,4 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 		else
 			*lst = new;
 	}
-
 }

@@ -6,7 +6,7 @@
 /*   By: tkono <tkono@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/28 09:51:03 by tkono             #+#    #+#             */
-/*   Updated: 2025/10/28 10:29:09 by tkono            ###   ########.fr       */
+/*   Updated: 2025/10/28 18:11:10 by tkono            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,7 @@ char	**ft_split(char const *s, char c)
 		{
 			result[j] = ft_strdup_till_c(&s[i], c);
 			if (!result[j])
-				return (ft_free_all(result, i));
+				return (ft_free_all(result, j));
 			++j;
 		}
 		prev = s[i];
@@ -98,3 +98,13 @@ char	**ft_split(char const *s, char c)
 	result[j] = NULL;
 	return (result);
 }
+
+// #include <stdio.h>
+// int main()
+// {
+// 	char	c;
+// 	c = ' ';
+// 	printf("%s\n",ft_split("h hkj hello world ", c)[1]);
+// 	c = '\0';
+// 	printf("%s\n",ft_split("hellotototot",c)[0]);
+// }
