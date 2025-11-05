@@ -6,9 +6,11 @@
 /*   By: tkono <tkono@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 15:01:53 by tkono             #+#    #+#             */
-/*   Updated: 2025/10/28 17:59:43 by tkono            ###   ########.fr       */
+/*   Updated: 2025/10/31 14:34:09 by tkono            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 static int	ft_isspace(char c)
 {
@@ -20,10 +22,12 @@ static int	ft_isspace(char c)
 
 int	ft_atoi(const char *s)
 {
-	int	i;
-	int	sum;
-	int	sign;
+	size_t		i;
+	long int	sum;
+	long int	sign;
 
+	if (!s)
+		return (NULL);
 	i = 0;
 	sum = 0;
 	sign = 1;

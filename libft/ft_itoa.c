@@ -6,11 +6,12 @@
 /*   By: tkono <tkono@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/25 15:26:27 by tkono             #+#    #+#             */
-/*   Updated: 2025/10/26 14:41:45 by tkono            ###   ########.fr       */
+/*   Updated: 2025/11/05 12:42:31 by tkono            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 int	ft_abs(int n)
 {
@@ -55,7 +56,7 @@ static char	*make_str(int is_negative, int n, size_t *nlen)
 	char	*str;
 
 	*nlen = count_digit(n);
-	str = (char *)malloc(*nlen + is_negative + 1);
+	str = (char *)malloc(sizeof(char) * (*nlen + is_negative + 1));
 	if (!str)
 		return (NULL);
 	return (str);
@@ -77,21 +78,19 @@ char	*ft_itoa(int n)
 	if (!str)
 		return (NULL);
 	str[nlen + is_negative] = '\0';
-	length = 0;
+	length = nlen + is_negative - 1;
 	while (n != 0)
 	{
-		str[length++] = '0' + ft_abs(n % 10);
+		str[length--] = '0' + ft_abs(n % 10);
 		n = (n / 10);
 	}
 	if (is_negative)
 		str[length] = '-';
-	++length;
-	ft_strreverse(str);
 	return (str);
 }
 
 // int main()
 // {
-// 	int n = -2147483648;
-// 	printf("%s",)
+// 	int n = -11232;
+// 	printf("%s\n",ft_itoa(n));
 // }

@@ -6,7 +6,7 @@
 /*   By: tkono <tkono@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 16:10:39 by tkono             #+#    #+#             */
-/*   Updated: 2025/10/28 10:01:43 by tkono            ###   ########.fr       */
+/*   Updated: 2025/11/05 12:45:36 by tkono            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,6 @@ char	*ft_strdup(const char *s1)
 // #include <stdio.h>
 // int main()
 // {
-// 	char *s = "hello wor";
+// 	char *s = "";
 // 	printf("%s", ft_strdup(s));
 // }

@@ -6,7 +6,7 @@
 /*   By: tkono <tkono@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 15:54:43 by tkono             #+#    #+#             */
-/*   Updated: 2025/10/28 19:36:12 by tkono            ###   ########.fr       */
+/*   Updated: 2025/11/05 12:57:10 by tkono            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,37 +14,32 @@
 
 void	*ft_memmove(void *dst, const void *src, size_t n)
 {
-	char			*s_dst;
-	char			*s_src;
-	size_t			i;
+	unsigned char		*s_dst;
+	unsigned const char	*s_src;
+	size_t				i;
 
 	if (dst == NULL || src == NULL)
 		return (NULL);
-	s_dst = (char *)dst;
-	s_src = (char *)src;
+	s_dst = (unsigned char *)dst;
+	s_src = (unsigned const char *)src;
 	if (s_dst <= s_src)
-	{
-		i = 0;
-		while (i < n)
-		{
-			s_dst[i] = s_src[i];
-			++i;
-		}
-	}
+		ft_memcpy(dst, src, n);
 	else
 	{
 		i = n;
-		while (--i > 0)
+		while (i > 0)
+		{
+			--i;
 			s_dst[i] = s_src[i];
-		s_dst[0] = s_src[0];
+		}
 	}
 	return (dst);
 }
 
-// #include <stdio.h>
-// int main()
-// {
-// 	char src[20] = "hello wLwwww";
-// 	ft_memmove((src + 6),src,3);
-// 	printf("%s",src);
-// }
+#include <stdio.h>
+int main()
+{
+	char src[20] = "hello wLwwww";
+	ft_memmove((src),src + 6,1);
+	printf("%s\n",src);
+}

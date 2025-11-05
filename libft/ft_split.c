@@ -6,7 +6,7 @@
 /*   By: tkono <tkono@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/28 09:51:03 by tkono             #+#    #+#             */
-/*   Updated: 2025/10/28 18:11:10 by tkono            ###   ########.fr       */
+/*   Updated: 2025/10/31 14:47:53 by tkono            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,8 @@ char	**ft_split(char const *s, char c)
 	if (!s)
 		return (NULL);
 	result = (char **)malloc(sizeof(char *) * (ft_count_words(s, c) + 1));
+	if (!result)
+		return (NULL);
 	i = 0;
 	j = 0;
 	prev = c;

@@ -6,7 +6,7 @@
 /*   By: tkono <tkono@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 18:15:16 by tkono             #+#    #+#             */
-/*   Updated: 2025/10/28 18:02:10 by tkono            ###   ########.fr       */
+/*   Updated: 2025/11/05 13:02:18 by tkono            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,16 @@
 
 static int	check_match(const char *start, const char *word, size_t word_len)
 {
-	size_t	i;
+	// size_t	i;
 
-	i = 0;
-	while (i < word_len)
-	{
-		if (start[i] != word[i])
-			return (0);
-		++i;
-	}
-	return (1);
+	// i = 0;
+	// while (i < word_len)
+	// {
+	// 	if (start[i] != word[i])
+	// 		return (0);
+	// 	++i;
+	// }
+	return (!ft_strncmp(start, word, word_len));
 }
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
@@ -38,8 +38,6 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 		return ((char *)haystack);
 	else
 	{
-		if (len < needle_len)
-			return (NULL);
 		i = 0;
 		while (i < (len - needle_len + 1) && haystack[i])
 		{
