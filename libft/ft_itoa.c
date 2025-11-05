@@ -6,12 +6,11 @@
 /*   By: tkono <tkono@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/25 15:26:27 by tkono             #+#    #+#             */
-/*   Updated: 2025/11/05 12:42:31 by tkono            ###   ########.fr       */
+/*   Updated: 2025/11/05 16:44:22 by tkono            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 int	ft_abs(int n)
 {

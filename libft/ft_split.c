@@ -6,7 +6,7 @@
 /*   By: tkono <tkono@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/28 09:51:03 by tkono             #+#    #+#             */
-/*   Updated: 2025/10/31 14:47:53 by tkono            ###   ########.fr       */
+/*   Updated: 2025/11/05 17:08:31 by tkono            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,17 +31,7 @@ static size_t	ft_count_words(char const *s, char c)
 	return (count);
 }
 
-static size_t	ft_wordlen_count(char const *s, char c)
-{
-	size_t	len;
-
-	len = 0;
-	while (s[len] && s[len] != c)
-		len++;
-	return (len);
-}
-
-static void	*ft_free_all(char **result, size_t n)
+static void	ft_free_all(char **result, size_t n)
 {
 	size_t	i;
 
@@ -52,7 +42,6 @@ static void	*ft_free_all(char **result, size_t n)
 		++i;
 	}
 	free(result);
-	return (NULL);
 }
 
 char	*ft_strdup_till_c(const char *s1, char c)
@@ -62,7 +51,9 @@ char	*ft_strdup_till_c(const char *s1, char c)
 
 	if (!s1)
 		return (NULL);
-	len = ft_wordlen_count(s1, c);
+	len = 0;
+	while (s1[len] && s1[len] != c)
+		len++;
 	s2 = (char *)malloc(sizeof(char) * (len + 1));
 	if (!s2)
 		return (NULL);
@@ -70,18 +61,12 @@ char	*ft_strdup_till_c(const char *s1, char c)
 	return (s2);
 }
 
-char	**ft_split(char const *s, char c)
+static int	make_result(char **result, char const *s, char c)
 {
 	size_t	i;
 	size_t	j;
-	char	**result;
 	char	prev;
 
-	if (!s)
-		return (NULL);
-	result = (char **)malloc(sizeof(char *) * (ft_count_words(s, c) + 1));
-	if (!result)
-		return (NULL);
 	i = 0;
 	j = 0;
 	prev = c;
@@ -91,13 +76,30 @@ char	**ft_split(char const *s, char c)
 		{
 			result[j] = ft_strdup_till_c(&s[i], c);
 			if (!result[j])
-				return (ft_free_all(result, j));
+			{
+				ft_free_all(result, j);
+				return (0);
+			}
 			++j;
 		}
 		prev = s[i];
 		++i;
 	}
 	result[j] = NULL;
+	return (1);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	char	**result;
+
+	if (!s)
+		return (NULL);
+	result = (char **)malloc(sizeof(char *) * (ft_count_words(s, c) + 1));
+	if (!result)
+		return (NULL);
+	if (!make_result(result, s, c))
+		return (NULL);
 	return (result);
 }
 

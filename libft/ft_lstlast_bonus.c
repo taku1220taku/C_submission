@@ -6,7 +6,7 @@
 /*   By: tkono <tkono@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 12:21:29 by tkono             #+#    #+#             */
-/*   Updated: 2025/10/31 14:38:53 by tkono            ###   ########.fr       */
+/*   Updated: 2025/11/05 16:44:43 by tkono            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,7 @@ t_list	*ft_lstlast(t_list *lst)
 	if (lst)
 	{
 		while (lst->next)
-		{
 			lst = lst->next;
-		}
 	}
 	return (lst);
 }
