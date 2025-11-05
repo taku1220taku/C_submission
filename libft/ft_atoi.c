@@ -6,7 +6,7 @@
 /*   By: tkono <tkono@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 15:01:53 by tkono             #+#    #+#             */
-/*   Updated: 2025/10/31 14:34:09 by tkono            ###   ########.fr       */
+/*   Updated: 2025/11/05 17:13:57 by tkono            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	ft_atoi(const char *s)
 	long int	sign;
 
 	if (!s)
-		return (NULL);
+		return (0);
 	i = 0;
 	sum = 0;
 	sign = 1;

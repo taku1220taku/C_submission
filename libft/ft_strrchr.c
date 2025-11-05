@@ -6,7 +6,7 @@
 /*   By: tkono <tkono@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 18:15:30 by tkono             #+#    #+#             */
-/*   Updated: 2025/11/05 13:05:10 by tkono            ###   ########.fr       */
+/*   Updated: 2025/11/05 17:34:38 by tkono            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,6 @@ char	*ft_strrchr(const char *s, int c)
 	if (!s)
 		return (NULL);
 	cc = (unsigned char)c;
-	if (cc == '\0')
-		return ((char *)s);
 	i = ft_strlen(s) + 1;
 	while (i > 0)
 	{
@@ -31,3 +29,10 @@ char	*ft_strrchr(const char *s, int c)
 	}
 	return (0);
 }
+
+// #include <stdio.h>
+// int main()
+// {
+// 	char s[20] = "kdfjkdjf";
+// 	printf("%d\n",ft_strrchr(s,0) == (s + ft_strlen(s)));
+// }

@@ -6,15 +6,15 @@
 /*   By: tkono <tkono@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 18:15:55 by tkono             #+#    #+#             */
-/*   Updated: 2025/10/22 18:17:03 by tkono            ###   ########.fr       */
+/*   Updated: 2025/11/05 17:51:26 by tkono            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_tolower(int c)
 {
-	char	c_c;
+	unsigned char	c_c;
 
-	c_c = (char)c;
+	c_c = (unsigned char)c;
 	if ('A' <= c_c && c_c <= 'Z')
 		return (c_c + 32);
 	return (c_c);
