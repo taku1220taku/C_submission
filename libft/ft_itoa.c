@@ -6,7 +6,7 @@
 /*   By: tkono <tkono@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/25 15:26:27 by tkono             #+#    #+#             */
-/*   Updated: 2025/11/05 16:44:22 by tkono            ###   ########.fr       */
+/*   Updated: 2026/02/12 14:35:49 by tkono            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,24 +17,6 @@ int	ft_abs(int n)
 	if (n < 0)
 		return ((-1) * n);
 	return (n);
-}
-
-void	ft_strreverse(char *s)
-{
-	int		i;
-	int		j;
-	char	tmp;
-
-	i = 0;
-	j = ft_strlen(s) - 1;
-	while (i < j)
-	{
-		tmp = s[i];
-		s[i] = s[j];
-		s[j] = tmp;
-		++i;
-		--j;
-	}
 }
 
 static size_t	count_digit(int n)
@@ -91,5 +73,5 @@ char	*ft_itoa(int n)
 // int main()
 // {
 // 	int n = -11232;
-// 	printf("%s\n",ft_itoa(n));
+// 	printf("%s\n", ft_itoa(n));
 // }
