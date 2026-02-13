@@ -6,13 +6,13 @@
 /*   By: tkono <tkono@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 22:23:52 by tkono             #+#    #+#             */
-/*   Updated: 2026/02/12 16:30:07 by tkono            ###   ########.fr       */
+/*   Updated: 2026/02/13 19:15:15 by tkono            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putnbr_base(unsigned long n, char *base)
+int	ft_putnbr_base(unsigned long long n, char *base)
 {
 	int				count;
 	unsigned int	base_len;

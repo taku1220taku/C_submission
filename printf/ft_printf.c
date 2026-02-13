@@ -6,11 +6,10 @@
 /*   By: tkono <tkono@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 18:23:06 by tkono             #+#    #+#             */
-/*   Updated: 2026/02/12 17:11:56 by tkono            ###   ########.fr       */
+/*   Updated: 2026/02/13 19:16:50 by tkono            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdarg.h>
 #include "ft_printf.h"
 
 int	ft_formats(va_list *args, const char format)
