@@ -6,13 +6,13 @@
 /*   By: tkono <tkono@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 18:14:30 by tkono             #+#    #+#             */
-/*   Updated: 2026/01/13 22:49:27 by tkono            ###   ########.fr       */
+/*   Updated: 2026/02/21 14:50:05 by tkono            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_strlen(const char *s)
+int	ft_strlen(const char *s)
 {
-	int len;
+	int	len;
 
 	if (!s)
 		return (0);
