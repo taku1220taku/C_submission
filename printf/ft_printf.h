@@ -6,7 +6,7 @@
 /*   By: tkono <tkono@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/12 16:19:35 by tkono             #+#    #+#             */
-/*   Updated: 2026/02/13 19:17:30 by tkono            ###   ########.fr       */
+/*   Updated: 2026/02/21 16:01:46 by tkono            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,9 @@
 # include <unistd.h>
 
 int	ft_printf(const char *format, ...);
-int	ft_formats(va_list *args, const char format);
 int	ft_putchar(int c);
 int	ft_strlen(const char *s);
-int	ft_putnbr_base(unsigned long n, char *base);
+int	ft_putnbr_base(unsigned long long n, char *base);
 
 int	ft_print_int(int n);
 int	ft_print_str(char *str);

@@ -6,65 +6,92 @@
 /*   By: tkono <tkono@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 18:23:06 by tkono             #+#    #+#             */
-/*   Updated: 2026/02/13 19:16:50 by tkono            ###   ########.fr       */
+/*   Updated: 2026/02/21 16:10:19 by tkono            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include <stdio.h>
+#include <stdlib.h>
 
-int	ft_formats(va_list *args, const char format)
+static int	ft_formats(va_list *args, const char format)
 {
-	int	len;
-
-	len = 0;
 	if (format == 'c')
-		len += ft_putchar(va_arg(*args, int));
+		return (ft_putchar(va_arg(*args, int)));
 	else if (format == 's')
-		len += ft_print_str(va_arg(*args, char *));
+		return (ft_print_str(va_arg(*args, char *)));
 	else if (format == 'p')
-		len += ft_print_ptr(va_arg(*args, void *));
+		return (ft_print_ptr(va_arg(*args, void *)));
 	else if (format == 'd' || format == 'i')
-		len += ft_print_int(va_arg(*args, int));
+		return (ft_print_int(va_arg(*args, int)));
 	else if (format == 'u')
-		len += ft_putnbr_base(va_arg(*args, unsigned int), "0123456789");
+		return (ft_putnbr_base(va_arg(*args, unsigned int), "0123456789"));
 	else if (format == 'x')
-		len += ft_putnbr_base(va_arg(*args, unsigned int), "0123456789abcdef");
+		return (ft_putnbr_base(va_arg(*args, unsigned int),
+				"0123456789abcdef"));
 	else if (format == 'X')
-		len += ft_putnbr_base(va_arg(*args, unsigned int), "0123456789ABCDEF");
+		return (ft_putnbr_base(va_arg(*args, unsigned int),
+				"0123456789ABCDEF"));
 	else if (format == '%')
-		len += write(1, "%", 1);
-	return (len);
+		return (write(1, "%", 1));
+	return (0);
+}
+
+static int	ft_process(const char **fmt, va_list *args)
+{
+	int	tmp;
+
+	if (**fmt == '%')
+	{
+		(*fmt)++;
+		if (!**fmt)
+			return (0);
+		tmp = ft_formats(args, **fmt);
+	}
+	else
+		tmp = write(1, *fmt, 1);
+	return (tmp);
 }
 
 int	ft_printf(const char *format, ...)
 {
 	va_list	args;
 	int		len;
-	int		i;
+	int		tmp;
 
-	i = 0;
 	len = 0;
+	if (!format)
+		return (-1);
 	va_start(args, format);
-	while (format[i])
+	while (*format)
 	{
-		if (format[i] == '%')
+		// if (format[i] == '%')
+		// {
+		// 	i++;
+		// 	if (!format[i])
+		// 		break ;
+		// 	tmp = ft_formats(&args, format[i]);
+		// }
+		// else
+		// 	tmp = write(1, &format[i], 1);
+		tmp = ft_process(&format, &args);
+		if (tmp == -1)
 		{
-			i++;
-			len += ft_formats(&args, format[i]);
+			va_end(args);
+			return (-1);
 		}
-		else
-			len += write(1, &format[i], 1);
-		i++;
+		len += tmp;
+		if (*format)
+			format++;
 	}
 	va_end(args);
 	return (len);
 }
 
-// #include <stdio.h>
-// #include <stdlib.h>
 // int main()
 // {
-// 	ft_printf(" %p %p \n", NULL, NULL);
-// 	printf(" %p %p ", NULL, NULL);
-// 	// printf(" %p %p ", 0, 0);
+// 	char	*s = "hello";
+// 	ft_printf(" %p %p ", 0, 0);
+// 	printf("\n %p %p ", 0, 0);
+// 	// printf("%d",printf(" %p %p ", 0, 0);
 // }

@@ -6,7 +6,7 @@
 /*   By: tkono <tkono@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 22:23:52 by tkono             #+#    #+#             */
-/*   Updated: 2026/02/13 19:15:15 by tkono            ###   ########.fr       */
+/*   Updated: 2026/02/21 16:02:55 by tkono            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,22 @@
 
 int	ft_putnbr_base(unsigned long long n, char *base)
 {
-	int				count;
-	unsigned int	base_len;
+	int					count;
+	int					tmp;
+	unsigned long long	base_len;
 
 	count = 0;
 	base_len = ft_strlen(base);
-
 	if (n >= base_len)
-		count += ft_putnbr_base(n / base_len, base);
-
-	count += ft_putchar(base[n % base_len]);
-
+	{
+		tmp = ft_putnbr_base(n / base_len, base);
+		if (tmp == -1)
+			return (-1);
+		count += tmp;
+	}
+	tmp = ft_putchar(base[n % base_len]);
+	if (tmp == -1)
+		return (-1);
+	count += tmp;
 	return (count);
 }
-// #include <stdio.h>
-// int main()
-// {
-// 	printf("\n%d",ft_putnbr_base(1234,"0123456789"));
-// }

@@ -6,7 +6,7 @@
 /*   By: tkono <tkono@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 22:27:23 by tkono             #+#    #+#             */
-/*   Updated: 2026/02/12 16:30:43 by tkono            ###   ########.fr       */
+/*   Updated: 2026/02/21 15:15:12 by tkono            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,22 @@
 int	ft_print_int(int n)
 {
 	int		count;
+	int		tmp;
 	long	num;
 
 	count = 0;
 	num = n;
 	if (num < 0)
 	{
-		count += ft_putchar('-');
+		tmp = ft_putchar('-');
+		if (tmp == -1)
+			return (-1);
+		count += tmp;
 		num = -num;
 	}
-	count += ft_putnbr_base(num, "0123456789");
+	tmp = ft_putnbr_base(num, "0123456789");
+	if (tmp == -1)
+		return (-1);
+	count += tmp;
 	return (count);
 }

@@ -41,7 +41,7 @@ The project includes a Makefile with the following rules
 https://qiita.com/subaruf/items/657c67a1809515589a7c
 https://qiita.com/kamata-bug-factory/items/d74ecc0122c52f7526ef
 
-AI was used to generate edge cases for testing the code.
+AI was used to deepen my understanding of the subject.
 
 ## Algorithm and Data Structure
 
@@ -70,7 +70,7 @@ For all numeric conversions (decimal, unsigned, hexadecimal), a recursive algori
 #### 4. Edge Case Management
 The implementation includes robust handling for special cases:
 * **Null Strings**: If a `%s` receives a `NULL` pointer, it explicitly prints `(null)`.
-* **Null Pointers**: If a `%p` receives a `NULL` pointer, it prints `(nil)`.
+* **Null Pointers**: If a `%p` receives a `NULL` pointer, it prints `0x00`.
 
 ### Data Structure Justification
 * **`va_list`**: This is the mandatory data structure for accessing variadic arguments in C. It is used to traverse the stack of arguments sequentially.
