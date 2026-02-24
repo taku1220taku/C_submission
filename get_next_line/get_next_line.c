@@ -6,7 +6,7 @@
 /*   By: tkono <tkono@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/12 18:07:25 by tkono             #+#    #+#             */
-/*   Updated: 2026/02/13 16:01:54 by tkono            ###   ########.fr       */
+/*   Updated: 2026/02/24 16:31:00 by tkono            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static char	*read_and_join(int fd, char *save)
 {
 	char	*buffer;
-	char	*temp;
+	// char	*temp;
 	int		bytes_read;
 
 	buffer = (char *)malloc(sizeof(char) * (BUFFER_SIZE + 1));
@@ -32,9 +32,11 @@ static char	*read_and_join(int fd, char *save)
 			return (NULL);
 		}
 		buffer[bytes_read] = '\0';
-		temp = save;
+		// temp = save;
 		save = ft_strjoin(save, buffer);
-		free(temp);
+		if (!save)
+			break ;
+		// free(temp);
 	}
 	free(buffer);
 	return (save);

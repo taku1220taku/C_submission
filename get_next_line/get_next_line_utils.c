@@ -6,7 +6,7 @@
 /*   By: tkono <tkono@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/12 18:07:31 by tkono             #+#    #+#             */
-/*   Updated: 2026/02/13 16:02:05 by tkono            ###   ########.fr       */
+/*   Updated: 2026/02/24 16:36:33 by tkono            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,8 @@ char	*ft_strjoin(char *s1, char *s2)
 	while (s2[++i])
 		str[j++] = s2[i];
 	str[j] = '\0';
+	if (s1)
+		free(s1);
 	return (str);
 }
 
@@ -77,18 +79,33 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 char	*ft_strchr(const char *s, int c)
 {
-	size_t	len;
-	size_t	i;
-
 	if (!s)
 		return (NULL);
-	i = 0;
-	len = ft_strlen(s) + 1;
-	while (i < len)
+	while (*s)
 	{
-		if (s[i] == (char)c)
-			return ((char *)(s + i));
-		++i;
+		if (*s == (char)c)
+			return ((char *)s);
+		s++;
 	}
+	if ((char)c == '\0')
+		return ((char *)s);
 	return (NULL);
 }
+
+// char	*ft_strchr(const char *s, int c)
+// {
+// 	size_t	len;
+// 	size_t	i;
+
+// 	if (!s)
+// 		return (NULL);
+// 	i = 0;
+// 	len = ft_strlen(s) + 1;
+// 	while (i < len)
+// 	{
+// 		if (s[i] == (char)c)
+// 			return ((char *)(s + i));
+// 		++i;
+// 	}
+// 	return (NULL);
+// }
