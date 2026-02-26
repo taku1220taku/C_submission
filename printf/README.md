@@ -32,7 +32,7 @@ The function handles the following conversion specifiers:
 ## Instructions
 The project includes a Makefile with the following rules
 
-* `make`: Compiles the library and generates `libft.a`.
+* `make`: Compiles the library and generates `libftprintf.a`.
 * `make clean`: Removes object files.
 * `make fclean`: Removes object files and the library `libft.a`.
 * `make re`: Recompiles the library (executes `fclean` and `make`).
