@@ -6,13 +6,11 @@
 /*   By: tkono <tkono@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 18:23:06 by tkono             #+#    #+#             */
-/*   Updated: 2026/02/26 17:54:53 by tkono            ###   ########.fr       */
+/*   Updated: 2026/02/26 19:48:17 by tkono            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdio.h>
-#include <stdlib.h>
 
 static int	ft_formats(va_list *args, const char format)
 {
@@ -65,15 +63,6 @@ int	ft_printf(const char *format, ...)
 	va_start(args, format);
 	while (*format)
 	{
-		// if (format[i] == '%')
-		// {
-		// 	i++;
-		// 	if (!format[i])
-		// 		break ;
-		// 	tmp = ft_formats(&args, format[i]);
-		// }
-		// else
-		// 	tmp = write(1, &format[i], 1);
 		tmp = ft_process(&format, &args);
 		if (tmp == -1)
 		{
@@ -87,11 +76,3 @@ int	ft_printf(const char *format, ...)
 	va_end(args);
 	return (len);
 }
-
-// int main()
-// {
-// 	char	*s = "hello";
-// 	ft_printf(" %p %p ", 0, 0);
-// 	printf("\n %p %p ", 0, 0);
-// 	// printf("%d",printf(" %p %p ", 0, 0);
-// }

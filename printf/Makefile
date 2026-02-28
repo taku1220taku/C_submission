@@ -2,11 +2,7 @@ NAME = libftprintf.a
 
 SRCS = ft_printf.c ft_putnbr_base.c ft_putchar.c ft_strlen.c ft_print_int.c ft_print_ptr.c ft_print_str.c
 
-# B_SRCS =
-
 OBJS = ${SRCS:.c=.o}
-
-# BONUS_OBJS = $(B_SRCS:.c=.o)
 
 CC = cc
 
@@ -20,13 +16,8 @@ all: ${NAME}
 $(NAME): ${OBJS}
 	ar rcs $@ $^
 
-# bonus: bonus.stamp
-# bonus.stamp: ${OBJS} ${BONUS_OBJS}
-# 	ar rcs ${NAME} $^
-# 	touch $@
-
 clean:
-	rm -f ${OBJS} ${BONUS_OBJS} bonus.stamp
+	rm -f ${OBJS}
 
 fclean: clean
 	rm -f ${NAME}

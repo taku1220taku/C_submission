@@ -6,7 +6,7 @@
 /*   By: tkono <tkono@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 18:14:30 by tkono             #+#    #+#             */
-/*   Updated: 2026/02/21 15:44:38 by tkono            ###   ########.fr       */
+/*   Updated: 2026/02/26 18:44:49 by tkono            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,6 @@ int	ft_strlen(const char *s)
 
 	len = 0;
 	while (s[len])
-		++len;
+		len++;
 	return (len);
 }

@@ -34,14 +34,14 @@ The project includes a Makefile with the following rules
 
 * `make`: Compiles the library and generates `libftprintf.a`.
 * `make clean`: Removes object files.
-* `make fclean`: Removes object files and the library `libft.a`.
+* `make fclean`: Removes object files and the library `libftprintf.a`.
 * `make re`: Recompiles the library (executes `fclean` and `make`).
 
 ## Resources
 https://qiita.com/subaruf/items/657c67a1809515589a7c
 https://qiita.com/kamata-bug-factory/items/d74ecc0122c52f7526ef
 
-AI was used to deepen my understanding of the subject.
+AI was used for code review, debugging (such as handling error propagation and preventing segfaults), and structuring this README document.
 
 ## Algorithm and Data Structure
 
@@ -70,8 +70,8 @@ For all numeric conversions (decimal, unsigned, hexadecimal), a recursive algori
 #### 4. Edge Case Management
 The implementation includes robust handling for special cases:
 * **Null Strings**: If a `%s` receives a `NULL` pointer, it explicitly prints `(null)`.
-* **Null Pointers**: If a `%p` receives a `NULL` pointer, it prints `0x00`.
-
+* **Null Pointers**: If a %p receives a NULL pointer, it prints `(nil)`.
+*
 ### Data Structure Justification
 * **`va_list`**: This is the mandatory data structure for accessing variadic arguments in C. It is used to traverse the stack of arguments sequentially.
 * **Stack-Only Approach**: By using recursion for number printing and writing directly to stdout, the implementation avoids heap allocation (`malloc`) entirely. This ensures memory safety and simplifies the logic, as there is no buffer management overhead.

@@ -6,7 +6,7 @@
 /*   By: tkono <tkono@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/12 18:07:25 by tkono             #+#    #+#             */
-/*   Updated: 2026/02/24 16:31:00 by tkono            ###   ########.fr       */
+/*   Updated: 2026/02/27 03:05:32 by tkono            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,31 +14,30 @@
 
 static char	*read_and_join(int fd, char *save)
 {
-	char	*buffer;
-	// char	*temp;
-	int		bytes_read;
+	char	*buf;
+	int		rd;
 
-	buffer = (char *)malloc(sizeof(char) * (BUFFER_SIZE + 1));
-	if (!buffer)
-		return (NULL);
-	bytes_read = 1;
-	while (!ft_strchr(save, '\n') && bytes_read != 0)
+	rd = 1;
+	buf = malloc(sizeof(char) * (BUFFER_SIZE + 1));
+	if (!buf)
+		rd = -1;
+	while (rd > 0 && !ft_strchr(save, '\n'))
 	{
-		bytes_read = read(fd, buffer, BUFFER_SIZE);
-		if (bytes_read == -1)
+		rd = read(fd, buf, BUFFER_SIZE);
+		if (rd > 0)
 		{
-			free(buffer);
-			free(save);
-			return (NULL);
+			buf[rd] = '\0';
+			save = ft_strjoin(save, buf);
+			if (!save)
+				rd = -1;
 		}
-		buffer[bytes_read] = '\0';
-		// temp = save;
-		save = ft_strjoin(save, buffer);
-		if (!save)
-			break ;
-		// free(temp);
 	}
-	free(buffer);
+	free(buf);
+	if (rd == -1)
+	{
+		free(save);
+		return (NULL);
+	}
 	return (save);
 }
 
@@ -64,16 +63,13 @@ static char	*clean_save(char *save)
 	char	*new_save;
 
 	i = 0;
-	// 改行まで進める
 	while (save[i] && save[i] != '\n')
 		i++;
-	// 改行がない（＝ファイルの末尾まで処理しきった）場合
 	if (!save[i])
 	{
 		free(save);
 		return (NULL);
 	}
-	// 改行の次の文字から確保
 	new_save = ft_substr(save, i + 1, ft_strlen(save) - i);
 	free(save);
 	return (new_save);
@@ -90,37 +86,36 @@ char	*get_next_line(int fd)
 	if (!save)
 		return (NULL);
 	line = extract_line(save);
+	if (!line)
+	{
+		free(save);
+		save = NULL;
+		return (NULL);
+	}
 	save = clean_save(save);
+	if (!save && ft_strchr(line, '\n'))
+	{
+		free(line);
+		return (NULL);
+	}
 	return (line);
 }
+#include <fcntl.h>
+#include <stdio.h>
 
-// int main(int argc, char **argv)
-// {
-//     int     fd;
-//     char    *line;
-//     int     i;
+int main(void)
+{
+	char	*str;
+	int		fd;
 
-//     i = 1;
-//     while (i < argc)
-//     {
-//         printf("\n--- Reading file: %s ---\n", argv[i]);
-//         fd = open(argv[i], O_RDONLY);
-
-//         if (fd == -1)
-//         {
-//             perror("Error opening file"); // ファイルが開けない場合のエラー表示
-//         }
-//         else
-//         {
-//             // GNL呼び出しループ
-//             while ((line = get_next_line(fd)) != NULL)
-//             {
-//                 printf("%s", line); // GNLは改行を含んで返すので、ここで\nは不要
-//                 free(line);         // ★必ずfreeすること
-//             }
-//             close(fd);
-//         }
-//         i++;
-//     }
-//     return (0);
-// }
+	fd = open("1.txt",O_RDONLY);
+	str = get_next_line(fd);
+	printf("%s", str);
+	while (str)
+	{
+		free(str);
+		str = get_next_line(fd);
+		printf("%s", str);
+	}
+	free(str);
+}
