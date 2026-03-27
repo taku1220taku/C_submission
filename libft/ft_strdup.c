@@ -6,7 +6,7 @@
 /*   By: tkono <tkono@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 16:10:39 by tkono             #+#    #+#             */
-/*   Updated: 2025/11/05 12:45:36 by tkono            ###   ########.fr       */
+/*   Updated: 2026/02/15 12:31:04 by tkono            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ char	*ft_strdup(const char *s1)
 	char	*s2;
 	size_t	len ;
 
-	if (!s1)
-		return (NULL);
 	len = ft_strlen(s1);
 	s2 = (char *)malloc(sizeof(char) * (len + 1));
 	if (!s2)

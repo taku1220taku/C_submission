@@ -6,7 +6,7 @@
 /*   By: tkono <tkono@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 15:02:06 by tkono             #+#    #+#             */
-/*   Updated: 2025/10/26 14:46:41 by tkono            ###   ########.fr       */
+/*   Updated: 2026/02/14 13:57:34 by tkono            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	*ft_calloc(size_t count, size_t size)
 {
 	void	*p;
 
-	if (size != 0 && count > (INT_MAX / size))
+	if (size != 0 && count > (SIZE_MAX / size))
 		return (NULL);
 	p = malloc(count * size);
 	if (!p)

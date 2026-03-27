@@ -6,16 +6,11 @@
 /*   By: tkono <tkono@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 15:09:25 by tkono             #+#    #+#             */
-/*   Updated: 2025/10/22 15:09:26 by tkono            ###   ########.fr       */
+/*   Updated: 2026/02/15 11:43:50 by tkono            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isdigit(int c)
 {
-	unsigned char	uc;
-
-	uc = (unsigned char)c;
-	if ('0' <= uc && uc <= '9')
-		return (1);
-	return (0);
+	return ('0' <= c && c <= '9');
 }

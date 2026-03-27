@@ -5,6 +5,7 @@
 The goal of this project is to understand the inner workings of these essential functions, learn about memory management, and build a reusable library that will be used in future 42 curriculum projects. This library serves as a personal toolkit, reinforcing the understanding of low-level data manipulation without relying on standard libraries.
 
 ## Instructions
+### Compilation
 The project includes a Makefile with the following rules
 
 * `make`: Compiles the library and generates `libft.a`.
@@ -14,6 +15,7 @@ The project includes a Makefile with the following rules
 * `make bonus`: Compiles the library including the bonus functions.
 
 ## Resources
+AI was used to deepen my understanding of the subject.
 
 ## Detailed Description of the Library
 ### Part 1 - Libc Functions

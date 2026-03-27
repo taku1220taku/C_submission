@@ -6,7 +6,7 @@
 /*   By: tkono <tkono@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 15:02:00 by tkono             #+#    #+#             */
-/*   Updated: 2025/10/22 15:02:01 by tkono            ###   ########.fr       */
+/*   Updated: 2026/02/15 11:40:48 by tkono            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ void	ft_bzero(void *s, size_t n)
 	size_t	i;
 	char	*str;
 
-	if (!s)
-		return ;
 	str = (char *)s;
 	i = 0;
 	while (i < n)
@@ -27,3 +25,16 @@ void	ft_bzero(void *s, size_t n)
 		i++;
 	}
 }
+
+// #include <strings.h>
+// #include <stdio.h>
+
+// int main()
+// {
+// 	// void *p = malloc(sizeof(char) * 5);
+// 	// ft_bzero(p, 6);
+// 	// printf("%s\n",(char *)p);
+// 	void *pp = malloc(sizeof(char) * 5);
+// 	bzero(pp,6);
+// 	printf("%c",((char *)pp)[5]);
+// }

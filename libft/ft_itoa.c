@@ -6,72 +6,114 @@
 /*   By: tkono <tkono@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/25 15:26:27 by tkono             #+#    #+#             */
-/*   Updated: 2026/02/12 14:35:49 by tkono            ###   ########.fr       */
+/*   Updated: 2026/02/15 11:53:06 by tkono            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_abs(int n)
-{
-	if (n < 0)
-		return ((-1) * n);
-	return (n);
-}
+// int	ft_abs(int n)
+// {
+// 	if (n < 0)
+// 		return ((-1) * n);
+// 	return (n);
+// }
 
-static size_t	count_digit(int n)
-{
-	size_t	i;
+// static size_t	count_digit(int n)
+// {
+// 	size_t	i;
 
-	i = 0;
+// 	i = 0;
+// 	while (n != 0)
+// 	{
+// 		n /= 10;
+// 		++i;
+// 	}
+// 	return (i);
+// }
+
+// static char	*make_str(int is_negative, int n, size_t *nlen)
+// {
+// 	char	*str;
+
+// 	*nlen = count_digit(n);
+// 	str = (char *)malloc(sizeof(char) * (*nlen + is_negative + 1));
+// 	if (!str)
+// 		return (NULL);
+// 	return (str);
+// }
+
+// char	*ft_itoa(int n)
+// {
+// 	size_t	length;
+// 	size_t	nlen;
+// 	char	*str;
+// 	int		is_negative;
+
+// 	if (n == 0)
+// 		return (ft_strdup("0"));
+// 	is_negative = 0;
+// 	if (n < 0)
+// 		is_negative = 1;
+// 	str = make_str(is_negative, n, &nlen);
+// 	if (!str)
+// 		return (NULL);
+// 	str[nlen + is_negative] = '\0';
+// 	length = nlen + is_negative - 1;
+// 	while (n != 0)
+// 	{
+// 		str[length--] = '0' + ft_abs(n % 10);
+// 		n = (n / 10);
+// 	}
+// 	if (is_negative)
+// 		str[length] = '-';
+// 	return (str);
+// }
+
+// // int main()
+// // {
+// // 	int n = -11232;
+// // 	printf("%s\n", ft_itoa(n));
+// // }
+
+static int	get_len(long n)
+{
+	int	len;
+
+	len = 0;
+	if (n <= 0)
+		len = 1;
 	while (n != 0)
 	{
 		n /= 10;
-		++i;
+		len++;
 	}
-	return (i);
-}
-
-static char	*make_str(int is_negative, int n, size_t *nlen)
-{
-	char	*str;
-
-	*nlen = count_digit(n);
-	str = (char *)malloc(sizeof(char) * (*nlen + is_negative + 1));
-	if (!str)
-		return (NULL);
-	return (str);
+	return (len);
 }
 
 char	*ft_itoa(int n)
 {
-	size_t	length;
-	size_t	nlen;
+	int		len;
 	char	*str;
-	int		is_negative;
+	long	nbr;
 
-	if (n == 0)
-		return (ft_strdup("0"));
-	is_negative = 0;
-	if (n < 0)
-		is_negative = 1;
-	str = make_str(is_negative, n, &nlen);
+	nbr = n;
+	len = get_len(nbr);
+	str = (char *)malloc(sizeof(char) * (len + 1));
 	if (!str)
 		return (NULL);
-	str[nlen + is_negative] = '\0';
-	length = nlen + is_negative - 1;
-	while (n != 0)
+	str[len--] = '\0';
+	if (nbr == 0)
+		str[0] = '0';
+	if (nbr < 0)
 	{
-		str[length--] = '0' + ft_abs(n % 10);
-		n = (n / 10);
+		str[0] = '-';
+		nbr = -nbr;
 	}
-	if (is_negative)
-		str[length] = '-';
+	while (nbr > 0)
+	{
+		str[len--] = (nbr % 10) + '0';
+		nbr /= 10;
+	}
 	return (str);
 }
-
-// int main()
-// {
-// 	int n = -11232;
-// 	printf("%s\n", ft_itoa(n));
-// }

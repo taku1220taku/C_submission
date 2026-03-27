@@ -6,16 +6,13 @@
 /*   By: tkono <tkono@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 18:17:11 by tkono             #+#    #+#             */
-/*   Updated: 2025/11/05 17:51:44 by tkono            ###   ########.fr       */
+/*   Updated: 2026/02/15 12:30:38 by tkono            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_toupper(int c)
 {
-	unsigned char	c_c;
-
-	c_c = (unsigned char)c;
-	if ('a' <= c_c && c_c <= 'z')
-		return (c_c - 32);
-	return (c_c);
+	if ('a' <= c && c <= 'z')
+		return (c - 32);
+	return (c);
 }

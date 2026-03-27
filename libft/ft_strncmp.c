@@ -6,7 +6,7 @@
 /*   By: tkono <tkono@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 18:14:50 by tkono             #+#    #+#             */
-/*   Updated: 2026/02/12 14:24:37 by tkono            ###   ########.fr       */
+/*   Updated: 2026/02/15 13:49:55 by tkono            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	size_t	i;
 
-	if (!s1 || !s2)
-		return (-1);
 	i = 0;
 	while ((s1[i] != '\0' || s2[i] != '\0') && i < n)
 	{

@@ -6,7 +6,7 @@
 /*   By: tkono <tkono@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 18:12:54 by tkono             #+#    #+#             */
-/*   Updated: 2025/10/25 21:18:54 by tkono            ###   ########.fr       */
+/*   Updated: 2026/02/15 13:10:11 by tkono            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	size_t	src_len;
 	size_t	i;
 
-	if (!dst || !src)
-		return (0);
 	dest_len = ft_strlen(dst);
 	src_len = ft_strlen(src);
 	if (dstsize == 0)

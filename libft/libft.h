@@ -6,7 +6,7 @@
 /*   By: tkono <tkono@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/28 18:01:47 by tkono             #+#    #+#             */
-/*   Updated: 2025/10/28 18:01:48 by tkono            ###   ########.fr       */
+/*   Updated: 2026/02/15 12:18:30 by tkono            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <limits.h>
+# include <stdint.h>
 
 int		ft_atoi(const char *s);
 void	*ft_calloc(size_t count, size_t size);

@@ -6,16 +6,11 @@
 /*   By: tkono <tkono@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 15:10:06 by tkono             #+#    #+#             */
-/*   Updated: 2025/10/22 15:10:10 by tkono            ###   ########.fr       */
+/*   Updated: 2026/02/15 12:12:52 by tkono            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isprint(int c)
 {
-	unsigned char	uc;
-
-	uc = (unsigned char)c;
-	if (32 <= uc && uc <= 126)
-		return (1);
-	return (0);
+	return (32 <= c && c <= 126);
 }
